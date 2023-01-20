@@ -53,7 +53,7 @@ app.post("/insert", (req, res) => {
   });
 });
 
-app.all("/", (req, res) => {
+app.all("*", (req, res) => {
   res.send("Welcome to codeBase API");
 });
 
