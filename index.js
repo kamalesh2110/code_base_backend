@@ -19,7 +19,7 @@ const { query } = require("express");
 //   res.sendFile(path.join(__dirname, "index.html"));
 // });
 
-app.get("/code_fetch", (req, res) => {
+app.get("/fetch", (req, res) => {
   db.query(`select * from code_view`, (err, resp) => {
     if (err) {
       return res.send(err);
@@ -29,7 +29,7 @@ app.get("/code_fetch", (req, res) => {
   });
 });
 
-app.post("/insert_code", (req, res) => {
+app.post("/insert", (req, res) => {
   const id = 0;
   const code_title = req.body.code_title;
   const code_description = req.body.code_description;
@@ -51,6 +51,10 @@ app.post("/insert_code", (req, res) => {
       return res.json(resp);
     }
   });
+});
+
+app.all("/", (req, res) => {
+  console.log("Welcome to codeBase API");
 });
 
 app.listen(process.env.APP_PORT, () => {
