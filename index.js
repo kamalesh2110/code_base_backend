@@ -20,13 +20,14 @@ const { query } = require("express");
 // });
 
 app.get("/code_fetch", (req, res) => {
-  db.query(`select * from code_view`, (err, resp) => {
-    if (err) {
-      console.log(err);
-    } else {
-      return res.json({ data: { status: "success", resp } });
-    }
-  });
+  //   db.query(`select * from code_view`, (err, resp) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       return res.json({ data: { status: "success", resp } });
+  //     }
+  //   });
+  res.send("test");
 });
 
 app.post("/insert_code", (req, res) => {
