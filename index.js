@@ -54,7 +54,7 @@ app.post("/insert", (req, res) => {
 });
 
 app.all("/", (req, res) => {
-  console.log("Welcome to codeBase API");
+  res.send("Welcome to codeBase API");
 });
 
 app.listen(process.env.APP_PORT, () => {
