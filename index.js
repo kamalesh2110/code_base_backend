@@ -19,7 +19,7 @@ const { query } = require("express");
 //   res.sendFile(path.join(__dirname, "index.html"));
 // });
 
-app.post("/code_fetch", (req, res) => {
+app.get("/code_fetch", (req, res) => {
   db.query(`select * from code_view`, (err, resp) => {
     if (err) {
       console.log(err);
