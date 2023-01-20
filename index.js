@@ -54,7 +54,7 @@ app.post("/insert", (req, res) => {
 });
 
 app.all("*", (req, res) => {
-  res.send("Welcome to codeBase API");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.listen(process.env.APP_PORT, () => {
